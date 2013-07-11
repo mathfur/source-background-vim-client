@@ -7,7 +7,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if exists("g:source_background_vim_client")
-  autocmd CursorMoved * call source_background_vim_client#cursor_moved()
+  command! -nargs=0 EnableSoureBackground call source_background_vim_client#enable()
+  command! -nargs=0 DisableSoureBackground call source_background_vim_client#disable()
 endif
 
 let &cpo = s:save_cpo
